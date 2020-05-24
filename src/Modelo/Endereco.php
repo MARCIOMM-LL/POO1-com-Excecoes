@@ -6,7 +6,7 @@ namespace Alura\Banco\Modelo;
 #não pode ser extendida/herdada
 final class Endereco
 {
-    #Acessando trait
+    #Usando uma trait
     use AcessorPropriedades;
 
     private $cidade;

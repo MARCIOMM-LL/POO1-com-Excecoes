@@ -12,16 +12,16 @@ $primeiraConta->deposita(500);
 $primeiraConta->saca(300); 
 
 $marcio = new Titular(
-            new Cpf('123.456.789-10'), 'Márcio Miranda', $endereco);
+          new Cpf('123.456.789-10'), 'Márcio Miranda', $endereco);
 
 $endereco = new Endereco('SP', 'um bairro', 'minha rua', '87D');            
 
-echo $primeiraConta->getNomeTitular() . PHP_EOL;
-echo $primeiraConta->getCpfTitular() . PHP_EOL;
-echo $primeiraConta->getSaldo() . PHP_EOL;
+echo $primeiraConta->getNomeTitular() . "<br>";
+echo $primeiraConta->getCpfTitular() . "<br>";
+echo $primeiraConta->getSaldo() . "<br>";
 
 $lilian = new Titular(
-            new Cpf('698.549.548-10'), 'Lilian', $endereco);
+          new Cpf('698.549.548-10'), 'Lilian', $endereco);
 
 $segundaConta = new Conta($lilian);
 var_dump($segundaConta);

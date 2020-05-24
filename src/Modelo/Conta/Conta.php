@@ -2,10 +2,12 @@
 
 namespace Alura\Banco\Modelo\Conta;
 
-#Uma classe abstract é um modelo/abstração que que serve de 
-#base para outras classes herdarem dela.
-#Ela não precisa obrigatóriamente ser herdada por outras, porém,
-#os métodos de classes abstratas, precisam ser implementados em outras classes obrigatóriamente
+use Alura\Banco\Modelo\Conta\Titular;
+
+#Uma classe abstract é um modelo/abstração que que serve de base para 
+#outras classes herdarem dela.Ela não precisa obrigatóriamente ser 
+#herdada por outras, porém, os métodos de classes abstratas, precisam 
+#ser implementados em outras classes obrigatóriamente
 abstract class Conta
 {
     private $titular;
@@ -17,14 +19,13 @@ abstract class Conta
         $this->titular = $titular;
         $this->saldo = 0;
 
-        #Exibição de um atributo static que não 
-        #precisa ser instânciado 
-        self::$numeroDeContas++;
+        #Exibição de um atributo static que não precisa ser instânciado
+        Conta::$numeroDeContas++;
     }
 
     public function __destruct()
     {
-        self::$numeroDeContas--;
+        Conta::$numeroDeContas--;
     }
 
     public function saca(float $valorASacar): void
@@ -69,14 +70,16 @@ abstract class Conta
 
     public static function getNumeroDeContas(): int
     {
-        return self::$numeroDeContas;
+        return Conta::$numeroDeContas;
     }
 
-    #Para O método abstract existir, a classe onde se 
+    #Para o método abstract existir, a classe onde se 
     #encontra o método abstract, também precisa ser abstract
     #Detalhe, todas as classes que tiverem métodos abstract,
     #precisam ser abstract também. E todas as classes que 
     #que herdarem de classes abstratas, precisam implementar 
     #seus métodos abstract obrigatoriamente.
+    #A esta técnica se dá o nome de polimorfismo, que é a 
+    #reescrita de métodos
     abstract protected function percentualTarifa(): float;
 }

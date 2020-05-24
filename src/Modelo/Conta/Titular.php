@@ -4,7 +4,6 @@
 namespace Alura\Banco\Modelo\Conta;
 
 #Importação de classes 
-
 use Alura\Banco\Modelo\Autenticavel;
 use Alura\Banco\Modelo\Pessoa;
 use Alura\Banco\Modelo\Cpf;
@@ -16,8 +15,7 @@ class Titular extends Pessoa implements Autenticavel
 
     public function __construct(Cpf $cpf, string $nome, Endereco $endereco)
     {
-        #Iniciando o __construct da classe base/pai 
-        #que no caso é a classe Pessoa
+        #Iniciando o __construct da classe base/pai que no caso é a classe Pessoa
         parent::__construct($nome, $cpf);
         $this->endereco = $endereco;
     }
@@ -27,6 +25,7 @@ class Titular extends Pessoa implements Autenticavel
         return $this->endereco;
     }
 
+    #Método da interface
     public function podeAutenticar(string $senha): bool
     {
         return $senha === 'dhss';

@@ -11,7 +11,7 @@ abstract class Funcionario extends Pessoa
 
     public function __construct(string $nome, Cpf $cpf, float $salario)
     {
-        #A propriedade parent chama o construtor da classe pessoa
+        #A propriedade parent inicia o construtor da classe Pessoa()
         parent::__construct($nome, $cpf);
         $this->salario = $salario;
     }
@@ -27,9 +27,11 @@ abstract class Funcionario extends Pessoa
         if($valorAumento < 0)
         {
             echo 'Aumento deve ser positivo.';
+            #Earlier Return
             return;
         }
 
+        #Passagem de valores por referência
         $this->salario += $valorAumento;
     }
 
@@ -38,6 +40,7 @@ abstract class Funcionario extends Pessoa
         return $this->salario;
     }
 
+    #Aqui está sendo implementado o pilar de poo polimorfismo, sobrescrita de métodos
     abstract public function calculaBonificacao(): float;
 
 }

@@ -2,9 +2,10 @@
 
 namespace Alura\Banco\Modelo;
 
-#Traits são pedaços de código que definem propriedades e métodos que podem ser 
+#Traits permitem o reuso de código que podem ser métodos que podem ser 
 #utilizados por diferentes classes, fornecendo funcionalidades adicionais. 
-#São semelhantes às classes abstratas, visando a reutilização de código e 
+#São semelhantes às classes abstratas, ou seja, traits não podem ser instânciados
+#sabendo isso, traits visa a reutilização de código em outras classes
 #resolvendo o problema da falta de herança múltipla
 trait AcessorPropriedades
 {

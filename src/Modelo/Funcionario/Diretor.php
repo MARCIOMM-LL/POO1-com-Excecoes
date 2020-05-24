@@ -18,6 +18,7 @@ class Diretor extends Funcionario implements Autenticavel
         return $this->getSalario() * 2;
     }
 
+    #Diferentes comportamentos para diversos objetos, polimorfismo
     public function podeAutenticar(string $senha): bool
     {
         return $senha === '1234';

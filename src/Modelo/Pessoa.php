@@ -27,8 +27,7 @@ abstract class Pessoa
         return $this->cpf->getNumero();
     }
 
-    #A palavra final impede que o método validaNome 
-    #seja sobrescrito em outras classes
+    #A palavra final impede que o método validaNome seja sobrescrito em outras classes
     final protected function validaNome(string $nomeTitular)
     {
         if (strlen($nomeTitular) < 5) 
