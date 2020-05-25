@@ -2,8 +2,10 @@
 
 require_once 'autoload.php';
 
-use Alura\Banco\Modelo\Conta\{ContaPoupanca, ContaCorrente, Titular, };
 use Alura\Banco\Modelo\{Cpf, Endereco};
+use Alura\Banco\Modelo\Conta\SaldoInsuficienteException;
+use Alura\Banco\Modelo\Conta\{ContaPoupanca, ContaCorrente, Titular, };
+
 
 $conta = new ContaCorrente(
          new Titular(
@@ -12,6 +14,16 @@ $conta = new ContaCorrente(
     )
 );
 $conta->deposita(500);
-$conta->saca(100);
+
+try {
+    echo $conta->saca(700);
+} catch (SaldoInsuficienteException $exception) {
+    echo "Você não tem saldo para reslizar este saque. <br />";
+    echo $exception->getMessage() . "<br />";
+}
 
 echo $conta->getSaldo();
+
+//echo "<pre>";
+
+//var_dump($conta);

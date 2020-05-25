@@ -2,6 +2,8 @@
 
 namespace Alura\Banco\Modelo;
 
+use Alura\Banco\Modelo\Conta\ValidarNome;
+
 abstract class Pessoa
 {
     #Acessando uma trait
@@ -32,8 +34,7 @@ abstract class Pessoa
     {
         if (strlen($nomeTitular) < 5) 
         {
-            echo "Nome precisa ter pelo menos 5 caracteres";
-            exit();
+            throw new ValidarNome("O nome deve possuir no mínimo 5 caracteres.");
         }
     }
 }
