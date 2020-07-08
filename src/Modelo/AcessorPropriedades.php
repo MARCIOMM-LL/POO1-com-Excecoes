@@ -2,7 +2,7 @@
 
 namespace Alura\Banco\Modelo;
 
-#Traits permitem o reuso de código que podem ser métodos que podem ser 
+#Traits permitem o reúso de código que podem ser métodos que podem são
 #utilizados por diferentes classes, fornecendo funcionalidades adicionais. 
 #São semelhantes às classes abstratas, ou seja, traits não podem ser instânciados
 #sabendo isso, traits visa a reutilização de código em outras classes
